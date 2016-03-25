@@ -1,6 +1,6 @@
 import { Component } from 'angular2/core';
 import { HTTP_PROVIDERS } from 'angular2/http';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 import 'rxjs/Rx'; // load the full rxjs
 
 import {HomeComponent}  from './home/home.component';
@@ -14,8 +14,7 @@ import {ContactComponent}  from './contact/contact.component';
     templateUrl: './app/app.component.html',
     directives: [ROUTER_DIRECTIVES],
     providers: [
-      HTTP_PROVIDERS,
-      ROUTER_PROVIDERS
+      HTTP_PROVIDERS
     ]
 })
 @RouteConfig([

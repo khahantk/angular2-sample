@@ -1,7 +1,8 @@
 import {Component, OnInit} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
 import { HTTP_PROVIDERS } from 'angular2/http';
-import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import {RouteConfig, RouterOutlet, RouterLink, Router, ROUTER_PROVIDERS,  ROUTER_DIRECTIVES} from 'angular2/router';
+
 
 import { Customer }    from './customer';
 import { CustomerService }    from './customer.service';
@@ -9,18 +10,15 @@ import { CustomerService }    from './customer.service';
 @Component({
     selector: 'customer-list',
     templateUrl: '/app/customer/customer-list.component.html',
-    directives: [ROUTER_DIRECTIVES],
-    providers: [
-        HTTP_PROVIDERS,
-        ROUTER_PROVIDERS
-    ]
+    directives: [ROUTER_DIRECTIVES]
+   
 })
 export class CustomerListComponent implements OnInit {
 
     public customers: Customer[] = [];
     public selectedCustomer: Customer;
     
-    constructor(private _router: Router, private _service:CustomerService){
+    constructor(private _service:CustomerService, private _router: Router){
         
     }
 
@@ -31,6 +29,13 @@ export class CustomerListComponent implements OnInit {
     onSelect(customer: Customer) {
         this.selectedCustomer = customer;
         this._router.navigate(['EditCustomer', {id: customer.id}]);
+    }
+    onDelete(customer:Customer){
+        this.selectedCustomer = customer;
+        if(window.confirm("Are you sure want to delete this item ?")){
+            this._service.removeCustomer(customer.id);
+        }
+        
     }
      gotoAdd(){
         this._router.navigate(['AddCustomer']);

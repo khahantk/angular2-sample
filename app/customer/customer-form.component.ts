@@ -1,6 +1,7 @@
 import {Component, OnInit, Inject} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
-import {RouteParams, Router } from 'angular2/router';
+import {RouteConfig, RouterOutlet, RouterLink, Router, RouteParams, ROUTER_DIRECTIVES, CanActivate, OnActivate, ComponentInstruction} from 'angular2/router';
+
 
 import { Customer}    from './customer';
 import { CustomerService }    from './customer.service';
@@ -17,12 +18,12 @@ export class CustomerFormComponent implements OnInit {
     public submitted: boolean = false;
     public active: boolean = true;
     
-    constructor(private _router: Router, private _routeParams: RouteParams, private _customerService: CustomerService){
+    constructor(private _customerService: CustomerService, private _router: Router, private _routeParams: RouteParams){
         
     }
 
     ngOnInit() {
-        let id:number = this._routeParams.get('id');
+        let id:number = +this._routeParams.get('id');
         if(id){
             this._customerService.getCustomer(id).then(customer=>this.model=customer);    
         }else{
@@ -34,8 +35,6 @@ export class CustomerFormComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-        this.active = false;
-        setTimeout(() => this.active = true, 0);
         this.save();
         this.gotoList();
     }

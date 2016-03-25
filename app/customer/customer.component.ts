@@ -1,5 +1,5 @@
 import { Component, OnInit } from 'angular2/core';
-import {RouteConfig,RouterOutlet, RouterLink, Router,   ROUTER_DIRECTIVES, CanActivate, OnActivate, ComponentInstruction} from 'angular2/router';
+import {RouteConfig,RouterOutlet, RouterLink, Router} from 'angular2/router';
 
 import {CustomerFormComponent}  from './customer-form.component';
 import {CustomerListComponent}  from './customer-list.component';
@@ -12,7 +12,7 @@ import {CustomerService}  from './customer.service';
     providers: [CustomerService]
 })
 @RouteConfig([
-    { path: '/list', name: 'HomeCustomer', component: CustomerListComponent, useAsDefault: true },
+    { path: '/', name: 'HomeCustomer', component: CustomerListComponent, useAsDefault: true },
     { path: '/add', name: 'AddCustomer', component: CustomerFormComponent },
     { path: '/edit/:id', name: 'EditCustomer', component: CustomerFormComponent },
 ])

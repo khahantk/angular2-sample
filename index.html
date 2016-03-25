@@ -8,34 +8,28 @@
     <script>document.write('<base href="' + document.location.origin + '" />');</script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="//code.angularjs.org/2.0.0-beta.8/angular2-polyfills.js"></script>
-    <script src="//code.angularjs.org/tools/system.js"></script>
-    <script src="//code.angularjs.org/tools/typescript.js"></script>
-    <script src="//code.angularjs.org/2.0.0-beta.8/Rx.js"></script>
-    <script src="//code.angularjs.org/2.0.0-beta.8/angular2.dev.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.8/router.dev.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.8/http.dev.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
+    <script src="https://npmcdn.com/angular2@2.0.0-beta.12/es6/dev/src/testing/shims_for_IE.js"></script>   
+
+    <script src="https://code.angularjs.org/2.0.0-beta.12/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://npmcdn.com/typescript@1.8.9/lib/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.12/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.12/angular2.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.12/router.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.12/http.dev.js"></script>
+    
     <script>
       System.config({
-        transpiler: 'typescript',
-        typescriptOptions: {
-          emitDecoratorMetadata: true
-        },
-        map: {
-          app: './app'
-        },
-        packages: {
-          app: {
-            main: './main.ts',
-            defaultExtension: 'ts'
-          }
-        }
+        transpiler: 'typescript', 
+        typescriptOptions: { emitDecoratorMetadata: true }, 
+        packages: {'app': {defaultExtension: 'ts'}} 
       });
-
-    System
-      .import('app')
-      .catch(console.error.bind(console));
+      System.import('app/main')
+            .then(null, console.error.bind(console));
     </script>
   </head>
   <body>
