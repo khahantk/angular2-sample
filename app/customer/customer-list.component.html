@@ -1,0 +1,30 @@
+<div class="page-heading">
+    <h1>List Customers</h1>
+</div>
+<div class="actions pull-right">
+    <a (click)="gotoAdd()" class="btn btn-success">Add Customer</a>
+</div>
+<div class="clearfix"></div>
+<p>&nbsp;</p> 
+<div class="panel panel-default">
+  <table class="table table-hover">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr  *ngFor="#customer of customers">
+              <td>{{customer.id}}</td>
+              <td>{{customer.name}}</td>
+              <td>{{customer.email}}</td>
+              <td>{{customer.address}}</td>
+              <td><button type="button" class="btn btn-success btn-sm">Edit</button></td>
+          </tr>    
+      </tbody>    
+  </table>
+</div>  
