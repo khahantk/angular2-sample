@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" [routerLink]="['Home']">Angular2 Sample</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -16,6 +16,11 @@
             <li><a [routerLink]="['About']">About</a></li>
             <li><a [routerLink]="['Contact']">Contact</a></li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a [routerLink]="['UserRegister']">Register</a></li>
+            <li><a [routerLink]="['UserLogin']">Login</a></li>
+          </ul>
+          
         </div><!--/.nav-collapse -->
       </div>
     </nav>
