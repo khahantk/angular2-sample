@@ -1,4 +1,5 @@
 # Introduction
+[![Build Status](https://travis-ci.org/khahantk/angular2-sample.svg?branch=master)](https://travis-ci.org/khahantk/angular2-sample)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Dependency Status](https://david-dm.org/khahantk/angular2-sample.svg)](https://david-dm.org/khahantk/angular2-sample)
 [![devDependency Status](https://david-dm.org/khahantk/angular2-sample/dev-status.svg)](https://david-dm.org/khahantk/angular2-sample#info=devDependencies)
