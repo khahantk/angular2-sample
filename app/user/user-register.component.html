@@ -2,16 +2,16 @@
 
 <div class="row">
     <div class="col-sm-6">
-        <form>
+        <form #f="ngForm" (ngSubmit)="onSubmit()" novalidate>
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
+                <input type="email" class="form-control" id="email" [(ngModel)]="vm.email" ngControl="email" placeholder="Email" required />
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" id="password" [(ngModel)]="vm.password" ngControl="password" placeholder="Password">
             </div>
-            <button type="submit" class="btn btn-success">Sign up</button>
+            <button type="submit" class="btn btn-success" [disabled]="!f.form.valid">Sign up</button>
         </form>
     </div>
 </div>

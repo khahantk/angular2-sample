@@ -4,9 +4,9 @@ export class User{
         private name: string,
         private email: string,
         private password: string,
-        private status: boolean,
-        private created: string,
-        private modified: string
+        private status: number,
+        private created: Date,
+        private modified: Date
          
     ){}
 }

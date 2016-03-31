@@ -1,13 +1,13 @@
 <div class="page-header"><h1>Forgot Password</h1></div>
 <div class="row">
     <div class="col-sm-6">
-        <form>
+        <form #f="ngForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
+                <input type="text" class="form-control" id="email" [(ngModel)]="vm.email" ngControl="email" placeholder="Email" required>
             </div>
             
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success" [disabled]="!f.form.valid">Submit</button>
         </form>
     </div>
 </div>

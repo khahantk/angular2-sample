@@ -2,20 +2,20 @@
     <h1>Login</h1></div>
 <div class="row">
     <div class="col-sm-6">
-        <form>
+        <form #f="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
+                <input type="email" class="form-control" id="email" [(ngModel)]="vm.email" ngControl="email" placeholder="Email" required/>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" id="password" [(ngModel)]="vm.password" ngControl="password"  placeholder="Password" required />
             </div>
             <div class="form-group">
-                <a>Forgot password ? </a><br/>
-                I am a new member ? <a>Sign up here</a>
+                <a [routerLink]="['UserForgot']">Forgot password ? </a><br/>
+                I am a new member ? <a [routerLink]="['UserRegister']">Sign up here</a>
             </div>
-            <button type="submit" class="btn btn-success">Login</button>
+            <button type="submit" class="btn btn-success" [disabled]="!f.form.valid">Login</button>
         </form>
     </div>
 </div>

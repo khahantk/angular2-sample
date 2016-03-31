@@ -2,21 +2,22 @@
     <h1>Contact us</h1>
 <div class="row">
     <div class="col-sm-6">
-        <form>
+        <form #f="ngForm" (ngSubmit)="onSubmit()" >
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Name">
+                <input type="text" class="form-control" id="name" [(ngModel)]="vm.name" ngControl="name" placeholder="Name" required />
+                 
             </div>
             <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" [(ngModel)]="vm.email" ngControl="email" placeholder="Email" required />
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea class="form-control" rows="3" id="message"></textarea>
+                <textarea class="form-control" rows="3" [(ngModel)]="vm.message" ngControl="message" id="message"></textarea>
             </div>
            
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success" [disabled]="!f.form.valid">Submit</button>
         </form>
     </div>
 </div>
