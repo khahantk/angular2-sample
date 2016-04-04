@@ -9,7 +9,7 @@ import {User} from './user';
 export class UserService {
 
     private _url: String = '/users';
-    static API_URL = {
+    static API_URL1 = {
         LOGIN: '/data/user.json',
         SIGNUP: '/data/user.json',
         FORGOT: '/data/user.json',
@@ -19,8 +19,8 @@ export class UserService {
         
         
     }  
-    static API_URL1 = {
-        LOGIN: '/auth/login',
+    static API_URL = {
+        LOGIN: '/data/user.json',
         SIGNUP: '/auth/signup',
         FORGOT: '/user/forgot',
         RESET: '/user/reset',

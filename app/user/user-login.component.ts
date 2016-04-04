@@ -19,6 +19,7 @@ export class UserLoginComponent implements OnInit {
     
     onSubmit(){
         console.log(this.vm);
+        this._userService.login(this.vm.email, this.vm.password).subscribe(res=>console.log(res));
     }
 
 }

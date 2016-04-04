@@ -5,16 +5,24 @@
         <form #f="ngForm" (ngSubmit)="onSubmit()" >
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" [(ngModel)]="vm.name" ngControl="name" placeholder="Name" required />
-                 
+                <input type="text" class="form-control" id="name" [(ngModel)]="vm.name" ngControl="name" #name="ngForm" placeholder="Name" required />
+                 <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    Name is required
+                    </div>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" [(ngModel)]="vm.email" ngControl="email" placeholder="Email" required />
+                <input type="email" class="form-control" id="email" [(ngModel)]="vm.email" ngControl="email" #email="ngForm" placeholder="Email" required />
+                <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                Email is required
+                </div>
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea class="form-control" rows="3" [(ngModel)]="vm.message" ngControl="message" id="message"></textarea>
+                <textarea class="form-control" rows="3" [(ngModel)]="vm.message" ngControl="message" #message="ngForm" id="message"></textarea>
+                <div [hidden]="message.valid || message.pristine" class="alert alert-danger">
+                    Message is required
+                 </div>
             </div>
            
             <button type="submit" class="btn btn-success" [disabled]="!f.form.valid">Submit</button>
