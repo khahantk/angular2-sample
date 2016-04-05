@@ -1,13 +1,13 @@
-import {HomeComponent}  from './home/home.component';
-import {CustomerFormComponent}  from './customer/customer-form.component';
-import {CustomerComponent}  from './customer/customer.component';
-import {AboutComponent}  from './about/about.component';
-import {ContactComponent}  from './contact/contact.component';
+import {HomeComponent}  from '../home/home.component';
+import {CustomerFormComponent}  from '../customer/customer-form.component';
+import {CustomerComponent}  from '../customer/customer.component';
+import {AboutComponent}  from '../about/about.component';
+import {ContactComponent}  from '../contact/contact.component';
 
 
-import {UserRegisterComponent}  from './user/user-register.component';
-import {UserLoginComponent}  from './user/user-login.component';
-import {UserForgotComponent}  from './user/user-forgot.component';
+import {UserRegisterComponent}  from '../user/user-register.component';
+import {UserLoginComponent}  from '../user/user-login.component';
+import {UserForgotComponent}  from '../user/user-forgot.component';
 
 export let routeDef: any[] = [
      {path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true},

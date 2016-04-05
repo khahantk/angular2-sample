@@ -1,11 +1,12 @@
 import { Component, OnInit } from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 import {UserService} from './user.service';
+import {EmailValidator} from './email.validator';
 
 @Component({
     selector: 'user-login',
     templateUrl: './app/user/user-login.component.html',
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, EmailValidator],
     providers: [UserService]  
 })
 
